@@ -1,0 +1,204 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block title %}
+LUXURE Payment
+{% endblock %}
+
+
+{% block content %}
+    <nav class="navbar">
+        <a href="#top" class="logo">LUXURE</a>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <div class="nav-links">
+            <a href="/" class="home-link">Home</a>
+            <a href="/store" class="home-link">Store</a>
+
+        
+            <div class="nav-btn flex-center-row">
+                <a href="/store/cart" class="
+                bag">
+                    <img src="{% static 'icons/bag.svg' %}" alt="">
+
+                    <div class="number-of-item">
+                        {{ cartitems }}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="brand-shipping-name-con">
+        <p class="brand-shipping-name">LUXURE</p>
+    </div>
+
+    <div class="main-con">
+        <section class="payment-summary">
+            <div class="summary-container">
+                <p class="summary-title">Summary</p>
+    
+                <hr>
+    
+                {% for item in items %}
+                <div class="all-product-summary">
+                    <div class="individual-product-summary">
+                        <div class="product-summary-img-con">
+                            <img src="{{ item.product.imageURL }}" alt="" classx`="product-summary-img">
+                        </div>
+    
+                        <p class="product-summary-name">{{ item.product.name }}</p>
+    
+                        <p class="product-summary-quantity">{{ item.quantity }}</p>
+    
+    
+                        <p class="product-summary-price">$ {{ item.product.price }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+    
+                <hr>
+    
+                <div class="summary-total-continer">
+                    <div class="total-price-summary">Total : $ {{ order.get_cart_total }}</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="shipping-form-section">
+            <form id="form">
+                <div id="user-info">
+                    <div class="name-con">
+                        <label for="fname" class="label">Full name:</label>
+                        <div class="name-input-con">
+                            <input type="text" name="fname" id="fname" placeholder="First name" required>
+        
+                            <input type="text" name="lname" placeholder="Last name" required>
+        
+                            <input type="text" name="mname" placeholder="Middle name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="contacts-con">
+                        <div class="email-add-con">
+                            <label for="email" class="label">Email:</label>
+                            <input type="email" name="email" placeholder="sample@gmail.com" id="email" required>
+                        </div>
+        
+                        <div class="mobile-con">
+                            <label for="mobile" class="label">Mobile number:</label>
+                            <input type="text" name="mobile" id="mobile" placeholder="09999999999" required>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="address-con">
+                    <label for="address" class="label address-title">Address</label>
+    
+                    <input type="text" id="address" name="street" placeholder="Door no. / Street" required>
+    
+                    <input type="text" id="address" name="city" placeholder="City" required>
+    
+                    <input type="text" id="address" name="zipcode" placeholder="Postal / Zip Code" required>
+    
+                </div>
+                
+                
+
+                <div class="shipping-submit-btn-con">
+                    <div class="summary-total-continer">
+                        <div class="total-price-summary">Total : $ {{ order.get_cart_total }}</div>
+                    </div>
+
+                    <input id="form-button payment-button" class="shipping-submit-btn" type="submit" value="Make payment" required>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <a href="#top" class="footer-logo">LUXURE</a>
+            <a href="#top">
+              <img
+                src="https://gistcdn.githack.com/Zendevve/3499f9407eedfdbca97fc3f038e769f1/raw/c89757ec932072829d8be724bb7614a67dcdcc65/luxure.svg"
+                alt="LUXURE" class="footer-logo-img">
+            </a>
+          </div>
+          <div class="footer-section">
+            <h3 class="footer-heading">Elevate Your Style</h3>
+            <p class="footer-description">Timeless elegance meets contemporary luxury in our handcrafted accessories.</p>
+          </div>
+          <div class="footer-section">
+            <h3 class="footer-heading">Quick Links</h3>
+            <nav class="footer-nav">
+              <a href="/">Home</a>
+              <a href="/store">Store</a>
+              <a href="/store/cart">Cart</a>
+            </nav>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="copyright">&copy; 2024 LUXURE. All rights reserved.</p>
+        </div>
+    </footer>
+    
+
+    <script type="text/javascript">
+        var user = '{{ request.user }}'
+
+        if (user != 'AnonymousUser'){
+            document.getElementById('user-info').innerHTML = ''
+        }
+
+        var form = document.getElementById('form')
+        var total = '{{ order.get_cart_total }}'
+
+		form.addEventListener('submit', function(e){
+	    	e.preventDefault()
+
+            var userFormData = {
+                'fname':null,
+                'lname':null,
+                'mname':null,
+                'email':null,
+                'mobile':null,
+                'total':total,
+            }
+
+            var shippingInfo = {
+                'address':form.street.value,
+                'city':form.city.value,
+                'zipcode':form.zipcode.value,
+            }
+
+            if (user == 'AnonymousUser'){
+                userFormData.fname = form.fname.value
+                userFormData.lname = form.lname.value
+                userFormData.mname = form.mname.value
+                userFormData.email = form.email.value
+                userFormData.mobile = form.mobile.value
+            }
+
+            var url = "/process_order/"
+            fetch(url, {
+                method:'POST',
+                headers:{
+                    'Content-Type':'applicaiton/json',
+                    'X-CSRFToken':csrftoken,
+                }, 
+                body:JSON.stringify({'form':userFormData, 'shipping':shippingInfo}),
+                
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+                alert('Transaction completed');  
+                window.location.href = "{% url 'store' %}"
+
+            })
+	    })
+    </script>
+{% endblock %}

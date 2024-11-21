@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="LUXURE - Timeless elegance meets contemporary luxury in our handcrafted accessories.">
+    <meta property="og:title" content="LUXURE - Elevate Your Style">
+    <meta property="og:description"
+        content="Timeless elegance meets contemporary luxury in our handcrafted accessories. Discover exquisite bags and accessories at LUXURE.">
+    <meta property="og:image"
+        content="https://gistcdn.githack.com/Zendevve/3499f9407eedfdbca97fc3f038e769f1/raw/c89757ec932072829d8be724bb7614a67dcdcc65/luxure.svg">
+    <meta property="og:url" content="https://www.luxure.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LUXURE">
+    <link rel="icon" type="image/x-icon"
+        href="https://gistcdn.githack.com/Zendevve/3499f9407eedfdbca97fc3f038e769f1/raw/c89757ec932072829d8be724bb7614a67dcdcc65/luxure.svg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&family=Athiti:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <script type="text/javascript">
+        var user = '{{ request.user }}'
+        
+        function getToken(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getToken('csrftoken')
+    </script>
+
+
+
+<link rel="stylesheet" href="{% static 'css/details.css' %}">
+<link rel="stylesheet" href="{% static 'css/landing_page.css' %}">
+<link rel="stylesheet" href="{% static 'css/shipping.css' %}">
+<link rel="stylesheet" href="{% static 'css/main_page.css' %}">
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+    
+    <script type="text/javascript" src="{% static 'js/landing_page.js' %}"></script>
+</body>
+</html>

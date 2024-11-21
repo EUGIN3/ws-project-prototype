@@ -1,0 +1,115 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block title %}
+LUXURE
+{% endblock %}
+
+{% block content %}
+  <nav class="navbar scrolled">
+    <a href="#top" class="logo">LUXURE</a>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <div class="nav-links">
+        <a href="/" class="home-link">Home</a>
+        <a href="/store" class="home-link">Store</a>
+
+      
+        <div class="nav-btn flex-center-row">
+          <a href="/store/cart" class="
+          bag">
+              <img src="{% static 'icons/bag.svg' %}" alt="">
+
+              <div class="number-of-item">
+                  {{ cartitems }}
+              </div>
+          </a>
+        </div>
+    </div>
+  </nav>
+
+  <main class="main-cart">
+    <h2 class="my-bag">MY BAG</h2>
+    <div class="checkout-summary">
+      <p>Items: <span id="item-count">{{ order.get_cart_items }}</span>&nbsp; | &nbsp;Total: <span id="total-price">$ {{ order.get_cart_total }}</span></p>
+      <a href="/store/cart/address" id="check-out-btn" class="check-out">CHECK OUT</a>
+    </div>
+
+    <section class="cart-items">
+      {% for item in items %}
+      <div class="cart-item">
+        <div class="check-out-img-con">
+          <img src="{{ item.product.imageURL }}" class="check-out-img">
+        </div>
+
+        <div class="item-details">
+          <div class="checkout-prod-name-con item-details-top">
+            <p class="checkout-prod-name">{{ item.product.name }}</>
+          </div>
+
+          <div class="item-details-bottom">
+            <div class="check-out-price-con">
+              <p class="check-out-price">$ {{ item.product.price }}</p>
+            </div>
+  
+
+  
+            <div class="quantity-and-btn">
+              <p class="quantity-text">
+                Quantity:
+              </p>
+              <button class="update-cart" data-product="{{ item.product.id }}" data-action="remove">-</button> 
+                <p class="cart-quantity">{{ item.quantity }}</p>
+              <button class="update-cart" data-product="{{ item.product.id }}" data-action="add">+</button>
+            </div>
+  
+            <p class="item-total">
+              Total: $ {{ item.get_total }}
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <a href="#top" class="footer-logo">LUXURE</a>
+        <a href="#top">
+          <img
+            src="https://gistcdn.githack.com/Zendevve/3499f9407eedfdbca97fc3f038e769f1/raw/c89757ec932072829d8be724bb7614a67dcdcc65/luxure.svg"
+            alt="LUXURE" class="footer-logo-img">
+        </a>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-heading">Elevate Your Style</h3>
+        <p class="footer-description">Timeless elegance meets contemporary luxury in our handcrafted accessories.</p>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-heading">Quick Links</h3>
+        <nav class="footer-nav">
+          <a href="/">Home</a>
+          <a href="/store">Store</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">&copy; 2024 LUXURE. All rights reserved.</p>
+    </div>
+  </footer>
+
+  
+  <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+  
+  <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+  <script type="text/javascript">
+    var itemQuan = '{{ order.get_cart_items }}'
+
+    if (parseInt(itemQuan) === 0) {
+      document.getElementById('check-out-btn').style.pointerEvents = 'none'
+    }
+
+  </script>
+{% endblock %}

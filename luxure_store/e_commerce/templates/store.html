@@ -1,0 +1,103 @@
+
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block title %}
+LUXURE Store
+{% endblock %}
+
+
+{% block content %}
+    <!-- Header section -->
+    <nav class="navbar">
+        <a href="#top" class="logo">LUXURE</a>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <div class="nav-links">
+            <a href="/" class="home-link">Home</a>
+
+          
+            <div class="nav-btn flex-center-row">
+                <a href="/store/cart" class="
+                bag">
+                    <img src="{% static 'icons/bag.svg' %}" alt="">
+
+                    <div class="number-of-item">
+                        {{ cartitems }}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Header section -->
+
+    <!-- Products -->
+    <section class="product-section flex-center-column">
+        <div class="product-main-container">
+            <!-- Navigation for product -->
+            <!-- <div class="product-navigation-container">
+                <nav class="product-navigation flex-center-column">
+                    <ul class="flex-center-row">
+                        {% for category in categories %}
+                            <li><a href="#" class="yellow-hover">{{ category }}</a></l>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div> -->
+            <!-- Navigation for product -->
+
+            <div class="main-products-container product-grid">
+                {% for product in products %}
+                <div class="product-card">
+                    <div class="product-img-container">
+                        <a href="/store/details/{{ product.id }}">
+                            <img src="{{ product.imageURL }}" alt="">
+                            </a>
+                        </div>
+                    
+                    <div class="info-container flex-center-column">
+                        <a href="/store/details/{{ product.id }}" class="product-name">{{ product.name }}</a>
+        
+                        <p class="price">$ {{ product.price }}</p>
+                        
+                        <button class="add-to-bag no-bg-btn update-cart" data-product="{{ product.id }}" data-action="add">Add to bag</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div> 
+        </div>   
+    </section>
+    <!-- Products -->
+
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <a href="#top" class="footer-logo">LUXURE</a>
+            <a href="#top">
+              <img
+                src="https://gistcdn.githack.com/Zendevve/3499f9407eedfdbca97fc3f038e769f1/raw/c89757ec932072829d8be724bb7614a67dcdcc65/luxure.svg"
+                alt="LUXURE" class="footer-logo-img">
+            </a>
+          </div>
+          <div class="footer-section">
+            <h3 class="footer-heading">Elevate Your Style</h3>
+            <p class="footer-description">Timeless elegance meets contemporary luxury in our handcrafted accessories.</p>
+          </div>
+          <div class="footer-section">
+            <h3 class="footer-heading">Quick Links</h3>
+            <nav class="footer-nav">
+              <a href="/">Home</a>
+            </nav>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="copyright">&copy; 2024 LUXURE. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+    
+
+    <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+{% endblock %}

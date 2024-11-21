@@ -1,0 +1,172 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block title %}
+LUXURE
+{% endblock %}
+
+{% block content %}
+  <nav class="navbar">
+    <a href="#top" class="logo">LUXURE</a>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <div class="nav-links">
+      <a href="#top">Home</a>
+      <a href="#bags" class="products-link">Products</a> <!-- Updated link -->
+      <!-- <a href="#" class="sign-up">Sign up</a>
+      <a href="#" class="sign-in">Sign in</a> -->
+      <a href="/store" class="sign-in button">Store</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-text">Your style,<br>ELEVATED</h1>
+      <a href="store/" class="get-started">Get started</a>
+    </div>
+  </section>
+
+  <section id="products" class="content-section">
+    <div class="categories">
+      <h3 id="bags" class="category-title">Bags</h3> <!-- Added ID -->
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="https://i.ibb.co/3Fq18PW/example-1.png" alt="Eminence Tote" class="product-image">
+          </div>
+          <div class="product-info">
+            <p class="available">Available</p>
+            <h4 class="product-name">Eminence Tote</h4>
+            <div class="rating" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="price">$1,200.00</p>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="https://i.ibb.co/0hM5QRY/example-2.png" alt="Etoile Hobo" class="product-image">
+          </div>
+          <div class="product-info">
+            <p class="available">Available</p>
+            <h4 class="product-name">Etoile Hobo</h4>
+            <div class="rating" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="price">$980.00</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="https://i.ibb.co/WxnHJVP/example-3.png" alt="Vérité Clutch" class="product-image">
+          </div>
+          <div class="product-info">
+            <p class="available">Available</p>
+            <h4 class="product-name">Vérité Clutch</h4>
+            <div class="rating" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="price">$750.00</p>
+          </div>
+        </div>
+      </div>
+      <h3 class="category-title">Shoes</h3>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="https://i.ibb.co/Fh9J0k4/example-4.png" alt="Sovereign Derby" class="product-image">
+          </div>
+          <div class="product-info">
+            <p class="available">Available</p>
+            <h4 class="product-name">Sovereign Derby</h4>
+            <div class="rating" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="price">$1,200.00</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="https://i.ibb.co/pQtx0Tw/example-5.png" alt=" " class="product-image">
+          </div>
+          <div class="product-info">
+            <p class="available">Available</p>
+            <h4 class="product-name">Lumière Chelsea</h4>
+            <div class="rating" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="price">$980.00</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="https://i.ibb.co/74P5GmH/example-6.png" alt="Virtuoso Boat" class="product-image">
+          </div>
+          <div class="product-info">
+            <p class="available">Available</p>
+            <h4 class="product-name">Virtuoso Boat</h4>
+            <div class="rating" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="price">$750.00</p>
+          </div>
+        </div>
+      </div>
+      <h3 class="category-title">Watches</h3>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="https://i.ibb.co/QnHHXmD/example-9.png" alt="Avant-Garde Fashion" class="product-image">
+          </div>
+          <div class="product-info">
+            <p class="available">Available</p>
+            <h4 class="product-name">Avant-Garde Fashion</h4>
+            <div class="rating" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="price">$2,495.00</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="https://i.ibb.co/GHcRHWQ/example-8.png" alt="Nouveau Luxury" class="product-image">
+          </div>
+          <div class="product-info">
+            <p class="available">Available</p>
+            <h4 class="product-name">Nouveau Luxury</h4>
+            <div class="rating" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="price">$4,995.00</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="https://i.ibb.co/d6T7gW8/example-10.png" alt="Crépuscule" class="product-image">
+          </div>
+          <div class="product-info">
+            <p class="available">Available</p>
+            <h4 class="product-name">Crépuscule</h4>
+            <div class="rating" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="price">$3,995.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <a href="#top" class="footer-logo">LUXURE</a>
+        <a href="#top">
+          <img
+            src="https://gistcdn.githack.com/Zendevve/3499f9407eedfdbca97fc3f038e769f1/raw/c89757ec932072829d8be724bb7614a67dcdcc65/luxure.svg"
+            alt="LUXURE" class="footer-logo-img">
+        </a>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-heading">Elevate Your Style</h3>
+        <p class="footer-description">Timeless elegance meets contemporary luxury in our handcrafted accessories.</p>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-heading">Quick Links</h3>
+        <nav class="footer-nav">
+          <a href="#top">Home</a>
+          <a href="#bags">Products</a>
+          <a href="/store">Store</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">&copy; 2024 LUXURE. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+{% endblock %}

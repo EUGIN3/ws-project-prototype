@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Athiti:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://gistcdn.githack.com/Zendevve/3499f9407eedfdbca97fc3f038e769f1/raw/c89757ec932072829d8be724bb7614a67dcdcc65/luxure.svg">
+
+    <link rel="stylesheet" href="{% static 'css/log_in.css' %}">
+
+    <title>Luxure Login</title>
+</head>
+<body>
+    <div class="login-container">
+        <h1>LUXURE</h1>
+        <!-- sign-in and sign-up button altogether -->
+            <div class="sign">
+                <div class="sign-in">
+                    <a href="#" style="text-decoration: none;">
+                        <button>Sign in</button>
+                    </a>
+                </div>
+                    <div class="sign-up">
+                    <a href="#" style="text-decoration: none;">
+                        <button>Sign up</button>
+                    </a>
+                </div>
+            </div>
+
+        <!-- user email and password entry -->
+            <div class="user-entry">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+            </div>
+
+        <!-- forgot password -->
+            <div class="forgotten-pass">
+                <a href="#">Forgot password?</a>
+            </div>
+        
+        <!-- sign-in button at the bottom -->
+            <div class="sign-in-solo">
+                <button>Sign in</button>
+            </div>
+
+        <!-- ======================= -->
+            <div class="have-account">
+                <p>Do you have an account? <a href="/signup">Sign up now</a></p>
+            </div>
+    </div>
+</body>
+</html>

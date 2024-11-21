@@ -1,0 +1,60 @@
+.details-content {
+    height: 100vh;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    padding-left: 120px;
+
+}
+
+div.details-and-btn-con {
+    margin-left: 60px;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.info-details h1 {
+    font-size: 60px;
+    margin: 0;
+    line-height: 60px;
+    margin-bottom: 40px;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.info-details p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 26px;
+    margin-left: 5px;
+}
+
+p.details-product-description {
+    font-size: 26px;
+    font-size: 16px;
+    opacity: 80%;
+    font-weight: 500;
+    margin-bottom: 60px;
+    font-style: italic;
+}   
+
+
+.details-info-pic {
+    height: 50vh;
+    object-fit: cover;
+}
+
+.details-info-pic img.pic {
+    height: 100%;
+}
+
+.details-button .add-to-bag {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 12px 40px
+}
+
+
+
+

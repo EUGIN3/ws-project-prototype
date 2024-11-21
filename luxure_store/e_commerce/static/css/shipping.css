@@ -1,0 +1,223 @@
+:root {
+    --primary-color: #17191a;
+    --accent-color: #fcc638;
+    --background: #f4f4f4;
+    --white: #ffffff;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow: 0 4px 20px rgba(23, 25, 26, 0.08);
+    --footer-background: #17191a;
+}
+
+div.brand-shipping-name-con {
+    text-align: center;
+    padding-top: 70px;
+}
+
+div.brand-shipping-name-con p.brand-shipping-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+}
+
+.main-con {
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+}
+
+section.shipping-form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+section.shipping-form-section form {
+    width: 50%;
+    padding: 20px;
+    
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 36px -7px rgba(0, 0, 0, 0.25);
+}
+
+
+.birthday-gender-con,
+.contacts-con {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-con,
+.birthday-con,
+.gender-con,
+.email-add-con,
+.mobile-con,
+.address-con {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.name-input-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.name-input-con input{
+    width: 100%;
+}
+
+section.shipping-form-section input {
+    padding: 8px 12px;
+    margin: 10px;
+    border: 1px solid rgba(126, 126, 126, 0.491);
+}
+
+section.shipping-form-section input:focus {
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.shipping-submit-btn-con {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.shipping-submit-btn-con .shipping-submit-btn {
+    padding: 0.8rem 2rem;
+    border-radius: 2px;
+    cursor: pointer;
+
+    
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.shipping-submit-btn-con input:hover {
+    opacity: 0.85;
+}
+
+
+input:focus {
+    outline: none;
+}
+
+section.payment-summary {
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 0;
+}
+
+.summary-container,
+.payment-container {
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 36px -7px rgba(0, 0, 0, 0.25);
+}
+
+.payment-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 15px;
+
+}
+
+/* .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+} */
+
+/* .button-group {
+    display: flex;
+   
+    gap: 10px;
+    display: flex;
+    justify-content: flex-end; 
+    gap: 10px;
+}
+
+.button-group .cancel,
+.button-group .confirm {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    
+} */
+/* 
+.button-group .cancel {
+    background-color: #ccc;
+   
+}
+
+.button-group .confirm {
+    background-color: #333;
+    color: #fff;
+} */
+/* 
+.payment-summary .input{
+    width: 600px;
+} */
+
+
+.individual-product-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.product-summary-img-con {
+    width: 100px;
+    height: 70px;
+}
+
+.product-summary-img-con img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+hr {
+    margin-bottom: 10px;
+}
+
+.product-summary-price,
+.product-summary-quantity,
+.product-summary-name,
+.total-price-summary {
+    font-weight: 600;
+}
+
+.address-title,
+.summary-title {
+    font-size: 32px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+
+section.payment-summary div.total-price-summary {
+    display: flex;
+    justify-content: end;
+
+    font-size: 24px;
+}

@@ -1,0 +1,77 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block title %}
+LUXURE
+{% endblock %}
+
+{% block content %}
+    <nav class="navbar">
+        <a href="#top" class="logo">LUXURE</a>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <div class="nav-links">
+            <a href="/" class="home-link">Home</a>
+            <a href="/store" class="home-link">Store</a>
+
+        
+            <div class="nav-btn flex-center-row">
+                <a href="/store/cart" class="
+                bag">
+                    <img src="{% static 'icons/bag.svg' %}" alt="">
+
+                    <div class="number-of-item">
+                        {{ cartitems }}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class = "details-content">
+        <div class = "details-info-pic">
+            <img src="{{ product.image.url }}" alt="Image with class" class="pic">
+        </div>
+
+        <div class="details-and-btn-con">  
+            <div class = "info-details">
+                <p class="details-product-price">$ {{ product.price }}</p>
+                <h1>{{ product.name }}</h1>
+                <p class="details-product-description">{{ product.description }}</p>
+            </div>
+
+            <div class="details-button">
+                <button class="add-to-bag no-bg-btn update-cart" data-product="{{ product.id }}" data-action="add">Add to bag</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <a href="#top" class="footer-logo">LUXURE</a>
+            <a href="#top">
+              <img
+                src="https://gistcdn.githack.com/Zendevve/3499f9407eedfdbca97fc3f038e769f1/raw/c89757ec932072829d8be724bb7614a67dcdcc65/luxure.svg"
+                alt="LUXURE" class="footer-logo-img">
+            </a>
+          </div>
+          <div class="footer-section">
+            <h3 class="footer-heading">Elevate Your Style</h3>
+            <p class="footer-description">Timeless elegance meets contemporary luxury in our handcrafted accessories.</p>
+          </div>
+          <div class="footer-section">
+            <h3 class="footer-heading">Quick Links</h3>
+            <nav class="footer-nav">
+              <a href="/">Home</a>
+            </nav>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="copyright">&copy; 2024 LUXURE. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+{% endblock %}

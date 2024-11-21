@@ -1,0 +1,168 @@
+html {
+    scroll-behavior: smooth;
+    }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F4F4F4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+
+/* Whole Container */
+.login-container {
+    width: 55vh;
+    background-color: #fff;
+    text-align: center;
+    background: #F4F4F4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 36px -7px rgba(0, 0, 0, 0.25);
+    border-radius: 1vh;
+}
+
+/* Luxure Font Style */
+.login-container h1 {
+    margin-bottom: 30px;
+    font-family: 'Kaisei Tokumin';
+    font-weight: 50;
+    font-size: 8vh;
+    color: #2E3440; 
+}
+/* =============================================================== */
+
+
+/* for sign-in and sign-up nav buttons */
+.sign {
+    text-decoration: none;
+    display: flex;
+    margin-bottom: 2vh;
+}
+.sign-in button {
+    border-radius: 0.3vh 0vh 0vh 0.3vh;
+    background: #17191A;
+    color: white;    /*<----- remove when needed */
+
+    
+}
+.sign-up button {
+    border-radius: 0vh 0.3vh 0.3vh 0vh;
+}
+.sign button{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Athiti';
+    font-weight: 500;
+    font-size: 3vh;
+    border: none;
+    height: 7vh;
+    width: 20vh;
+    /* background: #F4F4F4;*/  /* <----- uncomment the background and color for color hover transition*/
+    /*color: #2E3440; */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transform: translate(7.5vh, 0);
+}
+.sign button:hover{
+    /* background: #17191A;*/  /* <----- uncomment the background and color for color hover transition*/
+    /*color: #e9ecf0; */
+    transition: 0.3s ease-in-out;
+    transform: translate(7.5vh, 0);
+}
+
+/* =============================================================== */
+
+/* for email and password entry */
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 37.5vh;
+    height: 2.5vh;
+    font-family: 'Athiti';
+    font-size: 2.5vh;
+    font-weight: 500;
+    padding: 10px;
+    margin: 8px;
+    background: #ffffff;
+    border: 2px solid gray;
+    filter: drop-shadow(4px 4px 4px rgba(144, 144, 144, 0.25));
+    border-radius: 0.5vh;
+    transition: 0.2s ease-in-out;
+}
+.login-container input:hover[type="email"],
+.login-container input:hover[type="password"]  {
+    border: 2px solid rgb(32, 32, 32);
+}
+
+/* =============================================================== */
+
+
+/* forgot password style */
+.forgotten-pass {
+    margin-top: 2vh;
+    text-align: left;
+    margin-left: 7.5vh;
+    /* font-family: 'Athiti'; */
+    line-height: 3vh;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 100;
+    font-size: 2vh;
+}
+.forgotten-pass a{
+    text-decoration: none;
+    color: #17191A;
+    transition: 0.2s ease-in-out;
+}
+.forgotten-pass a:hover {
+    color: #617b94;
+}
+/* =============================================================== */
+
+/* single sign in button style */
+.sign-in-solo button {
+    margin-top: 5vh;
+    border: none;
+    border-radius: 0.5vh;
+    width: 16vh;
+    height: 4.5vh;
+    font-size: 2.3vh;
+    cursor: pointer;
+    background: #17191A;
+    color: #E3E6EA;
+    transition: 0.2s ease-in-out;
+    font-family: 'Athiti';
+}
+
+.sign-in-solo button:hover {
+    background-color: #414647;
+    color: #cfcfe4;
+}
+/* =============================================================== */
+
+
+/* (do you have an account? sign up now) style */
+.have-account {
+    font-weight: 600;
+    font-family: 'Athiti';
+    font-style: normal;
+    font-size: 2vh;
+    text-align: center;
+    color: #2E3440;
+    padding-top: 2vh;
+    margin-bottom: 5vh;
+}
+.have-account a{
+    text-decoration: none;
+    color: #FCA311;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+}
+.have-account a:hover{
+    color: #6f8bc0;
+    text-decoration: underline;
+}
+/* =============================================================== */
+
+

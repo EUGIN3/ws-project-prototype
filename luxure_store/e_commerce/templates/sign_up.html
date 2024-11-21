@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Sriracha&display=swap" rel="stylesheet">      
+    <link rel="icon" type="image/x-icon" href="https://gistcdn.githack.com/Zendevve/3499f9407eedfdbca97fc3f038e769f1/raw/c89757ec932072829d8be724bb7614a67dcdcc65/luxure.svg">
+
+    <link rel="stylesheet" href="{% static 'css/sign_up.css' %}">
+
+    <title>Luxure Sign Up</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">LUXURE</h1>
+        <div class="button-container">
+            <button class="toggle-button active">Sign in</button>
+            <button class="toggle-button">Sign up</button>
+        </div>
+        <form class="form">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+            <button type="submit" class="submit-button">Sign up</button>
+        </form>
+    </div>
+</body>
+</html>
